@@ -1,2 +1,76 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<div class="row justify-content-center">
+  <div class="col-9">
+    <div id="carouselExample" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-indicators">
+        <button type="button" data-bs-target="#carouselExample" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#carouselExample" data-bs-slide-to="1" aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#carouselExample" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        <button type="button" data-bs-target="#carouselExample" data-bs-slide-to="3" aria-label="Slide 4"></button>
+        <button type="button" data-bs-target="#carouselExample" data-bs-slide-to="4" aria-label="Slide 5"></button>
+        <button type="button" data-bs-target="#carouselExample" data-bs-slide-to="5" aria-label="Slide 6"></button>
+        <button type="button" data-bs-target="#carouselExample" data-bs-slide-to="6" aria-label="Slide 7"></button>
+      </div>
+      <div class="carousel-inner">
+        <div class="carousel-item active" data-bs-interval="4000">
+          <%= image_tag("home_page/manual-time-slot.png", class: "d-block w-100", alt: "Add a time interval manually") %>
+          <div class="carousel-caption d-none d-md-block">
+            <h5>Add a time interval manually</h5>
+            <p>You can add time interval manually whenever you want.</p>
+          </div>
+        </div>
+        <div class="carousel-item" data-bs-interval="2000">
+          <%= image_tag("home_page/auto-time-slot-1.png", class: "d-block w-100", alt: "Add a time interval automatically") %>
+          <div class="carousel-caption d-none d-md-block">
+            <h5>Add a time interval automatically</h5>
+            <p>Control your time with the automatic time tracker.</p>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <%= image_tag("home_page/auto-time-slot-2.png", class: "d-block w-100", alt: "The automatic time tracker") %>
+          <div class="carousel-caption d-none d-md-block">
+            <h5>The automatic time tracker</h5>
+            <p>Your time is under your full control.</p>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <%= image_tag("home_page/time-slots.png", class: "d-block w-100", alt: "List of time intervals") %>
+          <div class="carousel-caption d-none d-md-block">
+            <h5>List of time intervals</h5>
+            <p>You can see your time spent and control your actions.</p>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <%= image_tag("home_page/time-slots-actions.png", class: "d-block w-100", alt: "Control and actions") %>
+          <div class="carousel-caption d-none d-md-block">
+            <h5>Control and actions</h5>
+            <p>You can delete and edit.</p>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <%= image_tag("home_page/time-slots-edit.png", class: "d-block w-100", alt: "Edit action") %>
+          <div class="carousel-caption d-none d-md-block">
+            <h5>Updating a interval</h5>
+            <p>Edit this when you see fit.</p>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <%= image_tag("home_page/login.png", class: "d-block w-100", alt: "Login page") %>
+          <div class="carousel-caption d-none d-md-block">
+            <h5>Just try it now</h5>
+            <p>Test accounts:</p>
+            <p>user-1@example.com / password</p>
+            <p>user-2@example.com / password</p>
+          </div>
+        </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+  </div>
+</div>
