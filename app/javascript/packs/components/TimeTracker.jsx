@@ -13,7 +13,6 @@ class TimeTracker extends React.Component {
             end_time: null
         }
         this.startTimer = this.startTimer.bind(this)
-        // this.pauseTimer = this.pauseTimer.bind(this)
         this.resetTimer = this.resetTimer.bind(this)
         this.stopTimer = this.stopTimer.bind(this)
     }
@@ -28,11 +27,6 @@ class TimeTracker extends React.Component {
             time: Date.now() - this.state.start
         }), 1);
     }
-
-    // pauseTimer() {
-    //     this.setState({isOn: false})
-    //     clearInterval(this.timer)
-    // }
 
     stopTimer() {
         const endTime = Date.now()
@@ -50,21 +44,15 @@ class TimeTracker extends React.Component {
     }
 
     resetTimer() {
-        this.setState({time: 0, isOn: false})
+        this.setState({ time: 0, isOn: false })
     }
 
     render() {
         const start = (this.state.time == 0) ?
-            <button className="btn btn-outline-success me-xxl-4" onClick={this.startTimer}>Start</button> : null
+            <button className="btn btn-outline-success me-xxl-4" onClick={this.startTimer}>Clock In</button> : null
         const stop = (this.state.time == 0 || !this.state.isOn) ?
-            null : <button className="btn btn-outline-danger me-xxl-4" onClick={this.stopTimer}>Stop</button>
-        // const pause = (this.state.time == 0 || !this.state.isOn) ?
-        //     null : <button className="btn btn-outline-dark btn-sm me-xxl-2" onClick={this.pauseTimer}>Pause</button>
-        // const resume = (this.state.time == 0 || this.state.isOn) ?
-        //     null : <button className="btn btn-outline-success btn-sm me-xxl-2" onClick={this.startTimer}>Resume</button>
-        // const reset = (this.state.time == 0 || this.state.isOn) ?
-        //     null : <button className="btn btn-outline-danger btn-sm me-xxl-2" onClick={this.resetTimer}>Reset</button>
-        return(
+            null : <button className="btn btn-outline-danger me-xxl-4" onClick={this.stopTimer}>Clock Out</button>
+        return (
             <React.Fragment>
                 <div className="col-2">
                     <strong>timer: {ms(this.state.time, { colonNotation: true })}</strong>

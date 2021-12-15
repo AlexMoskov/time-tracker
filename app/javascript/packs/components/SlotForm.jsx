@@ -1,56 +1,15 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import DatePicker from 'react-datepicker'
 import TimeTracker from './TimeTracker'
-import "react-datepicker/dist/react-datepicker.css"
+import ManualTimeTracker from './ManualTimeTracker'
 
 import axios from '../shared/configuredAxios'
 
 class SlotForm extends React.Component {
     constructor(props) {
         super(props)
-        this.state = {
-            selectStartDate: new Date(),
-            selectEndDate: new Date()
-        };
-        this.onStartDateChange = this.onStartDateChange.bind(this)
-        this.onEndDateChange = this.onEndDateChange.bind(this)
-        this.onDescriptionChange = this.onDescriptionChange.bind(this)
-        this.handleSubmit = this.handleSubmit.bind(this)
+
         this.createTimeSlot = this.createTimeSlot.bind(this)
-    }
-
-    onStartDateChange(date) {
-        this.setState({
-            selectStartDate: date
-        })
-    }
-
-    onEndDateChange(date) {
-        this.setState({
-            selectEndDate: date
-        })
-    }
-
-    onDescriptionChange(e) {
-        this.setState({
-            description: e.target.value
-        })
-    }
-
-    handleSubmit(e) {
-        const { selectStartDate, selectEndDate, description } = this.state
-        const data = {
-            time_slot: {
-                description: description,
-                start_time: selectStartDate,
-                end_time: selectEndDate
-            }
-        }
-
-        e.preventDefault()
-        this.createTimeSlot(data)
-        e.target.reset()
     }
 
     createTimeSlot(data) {
@@ -68,59 +27,7 @@ class SlotForm extends React.Component {
     render() {
         return (
             <React.Fragment>
-                <form onSubmit={this.handleSubmit}>
-                    <div className="row g-3 align-items-center">
-                        <div className="col-auto">
-                            <label htmlFor="description" className="form-label">Description:</label>
-                            <input
-                                type="text"
-                                name="description"
-                                onChange={ this.onDescriptionChange }
-                                required
-                                className="form-control"
-                                id="description"
-                                placeholder="Write the slot description..."
-                            />
-                        </div>
-                        <div className="col-auto">
-                            <label htmlFor="selectStartDate" className="form-label">Start time:</label>
-                            <DatePicker
-                                className="form-control"
-                                selected={ this.state.selectStartDate }
-                                onChange={ this.onStartDateChange }
-                                name="selectStartDate"
-                                id="selectStartDate"
-                                showTimeSelect
-                                required
-                                timeIntervals={5}
-                                timeFormat="HH:mm"
-                                timeCaption="time"
-                                dateFormat="MM/dd/yyyy h:mm aa"
-                            />
-                        </div>
-                        <div className="col-auto">
-                            <label htmlFor="selectStartDate" className="form-label">End time:</label>
-                            <DatePicker
-                                className="form-control"
-                                selected={ this.state.selectEndDate }
-                                onChange={ this.onEndDateChange }
-                                name="selectEndDate"
-                                id="selectEndDate"
-                                showTimeSelect
-                                required
-                                timeIntervals={5}
-                                timeFormat="HH:mm"
-                                timeCaption="time"
-                                dateFormat="MM/dd/yyyy h:mm aa"
-                            />
-                        </div>
-                        <div className="col-auto align-self-end">
-                            <button className="btn btn-outline-primary btn-block form-control">
-                                Add Manual Time Slot
-                            </button>
-                        </div>
-                    </div>
-                </form>
+                <ManualTimeTracker createTimeSlot={this.createTimeSlot} />
                 <hr/>
                 <div className="row g-3 align-items-center justify-content-center">
                     <TimeTracker createTimeSlot={this.createTimeSlot} />
