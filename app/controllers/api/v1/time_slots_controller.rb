@@ -23,7 +23,7 @@ class Api::V1::TimeSlotsController < ApplicationController
       if @time_slot.save
         render json: @time_slot.to_json, status: :created, location: api_v1_time_slot_path(@time_slot)
       else
-        render json: @time_slot.errors, status: :unprocessable_entity
+        render json: { error: @time_slot.errors.full_messages.join(' ') }, status: :unprocessable_entity
       end
     else
       handle_unauthorized
@@ -35,7 +35,7 @@ class Api::V1::TimeSlotsController < ApplicationController
       if @time_slot.update(time_slot_params)
         render json: @time_slot.to_json, status: :ok, location: api_v1_time_slot_path(@time_slot)
       else
-        render json: @time_slot.errors, status: :unprocessable_entity
+        render json: { error: @time_slot.errors.full_messages.join(' ') }, status: :unprocessable_entity
       end
     else
       handle_unauthorized
@@ -47,7 +47,7 @@ class Api::V1::TimeSlotsController < ApplicationController
       if @time_slot.destroy
         render json: { status: 'ok' }, status: :ok
       else
-        render json: @time_slot.errors, status: :unprocessable_entity
+        render json: { error: @time_slot.errors.full_messages.join(' ') }, status: :unprocessable_entity
       end
     else
       handle_unauthorized
