@@ -4,4 +4,8 @@ class TimeSlot < ApplicationRecord
   belongs_to :user
 
   validates :start_time, :end_time, :description, presence: true
+
+  def duration
+    end_time - start_time
+  end
 end

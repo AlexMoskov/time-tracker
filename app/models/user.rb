@@ -5,6 +5,8 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   validates :first_name, :last_name, :email, presence: true
 
+  validates_uniqueness_of :email, case_sensitive: false
+
   has_many :time_slots, dependent: :destroy
 
   def full_name
