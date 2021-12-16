@@ -63,10 +63,13 @@ class TimeSlot extends React.Component {
 
     updateTimeSlotItem() {
         const { timeSlot } = this.props
-        const { selectStartDate, selectEndDate, description, editable } = this.state
+        const { selectStartDate, selectEndDate, editable } = this.state
         const path = `/api/v1/time_slots/${timeSlot.id}`
         const data = { time_slot: { approved: this.approvedRef.current.checked } }
 
+        this.setState({
+            approved: this.approvedRef.current.checked
+        })
         if (editable) {
             data.time_slot.description = this.textareaRef.current.value
             data.time_slot.start_time = new Date(selectStartDate)
