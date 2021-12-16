@@ -5,11 +5,12 @@
 If you are a new, this is the quickest way to get the app running.
 
 1. Get Ruby (3.0.0) installed
-2. Install gems: `bundle install`
-3. `rails db:create db:migrate db:seed`
-4. Install js libraries `yarn install`
-5. Start app: `rails s --binding=127.0.0.1`
-6. Open `http://127.0.0.1:3000/` or `http://localhost:3000/`
+2. Postgresql should be configured
+3. Install gems: `bundle install`
+4. `rails db:create db:migrate db:seed`
+5. Install js libraries `yarn install`
+6. Start app: `rails s --binding=127.0.0.1`
+7. Open `http://127.0.0.1:3000/` or `http://localhost:3000/`
 
 ## Running Tests
 
