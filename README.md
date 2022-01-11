@@ -45,38 +45,3 @@ rails c
 user-1@example.com / password
 user-2@example.com / password
 ```
-
-### Written Response
-
-1. Please describe your process for approaching the code challenge. What kind of planning did you do? Did your plans change as you began coding?
-```
-At the beginning, I carefully analyzed the technical assignment and highlighted the main points such as: tracking time, support many users and work with data.
-Then, I decided to create a basic functionality for the backend with a simple visualization on the frontend.
-When this was done, I switched to the UI part, for which I configured the React library and other necessary packages.
-I also consider testing an important part of the process, but I left it and decided to add tests at the end of the task, in order to have time to implement all the functionality.
-At the end of the planning, I divided the task into smaller parts(tasks) for gradual implementation, step by step.
-My plans didn't change after I started coding, because I had a certain time limit and the tasks have already been analyzed and formed.
-If I changed my plans, in my opinion, it would be a waste of limited time.
-```
-
-2. Describe the schema design you chose. Why did you choose this design? What other alternatives did you consider?
-```
-I chose a scheme that is suitable for this task and does not take much time to implement. 
-I also had some similar elements (but not all) in my previous work.
-I presented the concept of the page as a time tracker that I used.
-An alternative design was - it's a more dynamic page with more usability, 
-but, unfortunately, it would take much longer to implement.
-```
-3. If you were given another day to work on this, how would you spend it? What if you were given a month?
-```
-If I had more time:
-One Day:   
-  - I would add tests for the UI part (jest and cucumber)
-  - I would also check all the logic again, step by step.
-One month: 
-  - Added more tests       
-  - I would add more functionality to the application such as: 
-    working with a user profile, additional configurations for teachers, 
-    add a few roles that can manage time tracking, validations, 
-    several types for intervals, pause for the tracker, filters, reports and others.
-```
